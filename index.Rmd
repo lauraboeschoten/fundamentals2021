@@ -8,12 +8,12 @@ output:
 
 # Intro {.sidebar}
 
-This dashboard covers the course materials for the course [***Fundamental Techniques in Data Science with R***](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=201900026&collegejaar=2020&taal=en)
+This dashboard covers the course materials for the course [***Fundamental Techniques in Data Science with R***](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=201900026&collegejaar=2021&taal=en)
 
 ---
 
-Course leader: [Gerko Vink](https://www.gerkovink.com) <br>
-Workgroup leader: [Laura Boeschoten](https://www.uu.nl/medewerkers/LBoeschoten) <br>
+Lectures: [Kyle Lang](https://www.uu.nl/medewerkers/KMLang) <br>
+Working groups: [Laura Boeschoten](https://www.uu.nl/medewerkers/LBoeschoten) <br>
 Study load: 7.5 ECTS <br>
 Assessment: Assignments and Exam <br>
 [Course SurfDrive folder](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF)

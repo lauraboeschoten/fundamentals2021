@@ -1,0 +1,511 @@
+---
+title: "Fundamental Techniques"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+---
+
+# Intro {.sidebar}
+
+This dashboard covers the course materials for the course [***Fundamental Techniques in Data Science with R***](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=201900026&collegejaar=2020&taal=en)
+
+---
+
+Course leader: [Gerko Vink](https://www.gerkovink.com) <br>
+Workgroup leader: [Laura Boeschoten](https://www.uu.nl/medewerkers/LBoeschoten) <br>
+Study load: 7.5 ECTS <br>
+Assessment: Assignments and Exam <br>
+[Course SurfDrive folder](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF)
+
+---
+
+| When?  |         | Where?      |
+|--------|---------|-------------|
+| 19-Nov | 5.15 pm | MS Teams |
+| 16-Nov | 5.15 pm | MS Teams |
+| 23-Nov | 5.15 pm | MS Teams |
+| 30-Nov | 5.15 pm | MS Teams |
+| 07-Dec | 5.15 pm | MS Teams |
+| 14-Dec | 5.15 pm | MS Teams |
+| 11-Jan | 5.15 pm | MS Teams |
+| 18-Jan | 5.15 pm | MS Teams |
+| 25-Jan | 7-9 pm | pending  |
+
+
+
+---
+
+# Quick Overview
+
+## Column 1
+
+### Fundamental Techniques in Data Science with `R` 
+In nine weeks you will learn the basics of data handling with R and the details about regression techniques in the context of statistical inference, as well as the connection to research philosophy. During every lecture we will treat a different theoretical aspect. Following each lecture there will be a computer lab exercise that connects the statistical theory to practice, as well as a workgroup meeting wherein you will work on solving motivating real-world case studies. 
+
+### Assignment and Grading
+
+The final grade is computed as follows
+
+| Graded part       | Weight      |
+|:-------|:------|
+| Linear Regression Assignment and presentation | 25 % |
+| Logistic Regression Assignment | 25 % |
+| Written Exam | 50 % |
+
+To develop the necessary skills for completing the assignments and the presentations, 7 `R` exercises must be made and submitted. These exercises are not graded, but students must fulfil them to pass the course.
+
+In order to pass the course, the final grade must be 5.5 or higher, your contribution to the course should be sufficient and all assignments and `R` exercises should be handed in and/or passed. Otherwise, additional work is required concerning the assignments and/or exercises you have failed.
+
+## Column 2
+
+### Schedule
+
+
+| Week #  | Topic   | `R`-practical | Workgroup | 
+|---|---------|-----------|-----------|
+| 1 | The elemental building blocks of `R` | Assigning objects and elements; creating vectors, matrices, dataframes and lists | Receive instructions and form groups |
+| 2 | Finding the least squares solution; simple linear regression | Subsetting data; using pipes to simplify the workflow | Locate a data set for predictive modeling and formulate a research hypothesis; make sure that the set facilitates continuous and dichotomous outcomes |
+| 3 | Linear modeling in `R`; testing assumptions; standardized residuals, leverage and Cook's distance | Class `lm` in `R`; modeling, prediction and visualization | Fit your defined model; evaluate if assumptions are met |
+| 4 | Inferential modeling; Confidence intervals and hypothesis testing, non-constant error variance | Investigate the assumptions about linear modeling | Test and quantify the effect of the defined model; continue the project in `rmarkdown` |
+| 5 | Model evaluation; cross-validation; categorical variables, non-linear relations, interactions and higher-order polynomials | Cross-validation and model fit in `R` | Evaluate if the model can be improved; **Prepare assignment A; evaluate the final linear model on your own data** |
+| 6 | Simple logistic regression | Class `glm(formula, family = "binomial")` in `R`; modeling, prediction and visualization | Fit your defined model; evaluate if assumptions are met |
+| 7 | Formulating the logistic model and interpreting the parameters; marginal effects | Parameter transformations; scale of the predictor/outcome and prediction and confidence intervals | Test and quantify the effect of the defined model |
+| 8 | Logistic regression model evaluation; cross-validation; multiple regression; interactions | Multiple logistic regression and cross-validating the logistic regression in `R` | Evaluate if the model can be improved; **Prepare assignment B; evaluate the final logistic model on your own data** |
+
+
+# Course Manual
+
+## Column 1
+
+### Course description
+Regression techniques are widely used to quantify the relationship between two or more variables. In data science it is very common to investigate this relation and linear and logistic regression are proven to be very powerful techniques. However, it is essential to understand how and when it is appropriate to apply these regression techniques. In this course, students will learn exactly how to do that with the statistical software package `R`. 
+ 
+This course gives students a new set of tools to explore the issues and problems so many people care about. The course will help students get acquainted with the principles of analytical data science, linear and logistic regression and introduces the basics of statistical learning. These techniques will be presented in the context of estimation, testing and prediction. Students will learn to adapt these techniques in their way of thinking about statistical inference, which will help students to quantify the uncertainty and measure the accuracy of statistical estimates. Students will develop fundamental `R` programming skills and will gain experience with `tidyverse`, visualize data with `ggplot2` and perform basic data wrangling techniques with `dplyr`. This course makes students better equipped for a further career (e.g. junior researcher or research assistant) or education in research, such as a (research) Master program, or a PhD. 
+
+### Assignment
+Students will form groups to choose work on two assigments. Students will need to perform calculations and program code for these assigments. All work needs to be combined in an easy understandable and insightful `R` project and must be submitted to the [Surfdrive file drop environment]((https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF). Each assigment will be graded will be graded on 
+
+1. Quality of the methodological application
+2. Model evaluation and assumptions checking
+3. Quality of the code and scripts 
+
+### Grading
+Students will be evaluated on the following aspects:
+ 
+1. apply and interpret the basic methodological and statistical concepts that are associated with doing predictive and/or inferential research;
+
+a. explain concepts from inferential statistics, such as probability, inference and modeling; and apply them in practice. 
+b. make an informed choice for research designs that are suitable for regression analyses.
+c. apply and explain the choice for techniques to investigate data problems.
+d. apply and explain the concepts of linearity and non-linearity.
+e. interpret statistical software output and report software output following APA reporting guidelines.
+f. explain and conceptualize statistical inference and its relation to statistical theory.
+g. perform the different steps in solving basic regression analysis problems and report on these steps.
+ 
+2. apply and interpret important techniques in linear and logistic regression analysis;
+
+a. perform, interpret and evaluate quantitative (causal) analyses on data with the statistical software platform R.
+b. perform analyses in statistical software.
+ 
+### Relation between assessment and objective
+- With the exam the knowledge from methodological and statistical concepts is evaluated (learning goals 1a, 1d, 1f), as well as the application of these concepts to research scenarios (learning goals 1b and 1c). During the exam students need to interpret statistical software output (learning goal 1e).
+- With the practical lab it is tested if the student has sufficient skills to solve basic analysis problems and execute quantitative analyses on real-life data sets (learning goals 2a and 2b).
+- The work groups focuses on applying the newly gained knowledge and skills through a series of motivating real-world case studies aimed at solving relevant data analysis problems and reporting on the steps taken to obtain a solution (learning goal 1g).
+
+After taking this course students can understand innovations in statistical markup, statistical simulation and reproducible research. Students are also able to approach challenges from different professional viewpoints. They have gained experience in marking up a professional manuscript and designing a state-of-the-art statistical archive in an open source repository.
+
+# How to prepare
+
+## Column 1
+
+### Preparing your machine for the course
+Dear all, 
+
+This semester you will participate in the **Fundamental Techniques in Data Science with `R`** course at Utrecht University. To realize a steeper learning curve, we will use some functionality that is not part of the base installation for `R`. The below steps guide you through installing both `R` as well as the necessary additions. Please do so before the first meeting. 
+
+I look forward to see you all,  
+
+*Gerko Vink*
+
+### **System requirements**
+
+Bring a laptop computer to the course and make sure that you have full write access and administrator rights to the machine. We will explore programming and compiling in this course. This means that you need full access to your machine. Some corporate laptops come with limited access for their users, I therefore advice you to bring a personal laptop computer to the workgroup meetings. 
+
+### **1. Install `R`**
+`R` can be obtained [here](https://cran.r-project.org). We won't use `R` directly in the course, but rather call `R` through `RStudio`. Therefore it needs to be installed. 
+
+### **2. Install `RStudio` Desktop**
+
+Rstudio is an Integrated Development Environment (IDE). It can be obtained as stand-alone software [here](https://www.rstudio.com/products/rstudio/download/#download). The free and open source `RStudio Desktop` version is sufficient.
+
+### **3. Start RStudio and install the following packages. **
+
+Execute the following lines of code in the console window:
+
+```{r eval=FALSE, echo = TRUE}
+install.packages(c("ggplot2", "tidyverse", "magrittr", "micemd", "jomo", "pan", 
+                 "lme4", "knitr", "rmarkdown", "plotly", "ggplot2", "shiny", 
+                 "devtools", "boot", "class", "car", "MASS", "ggplot2movies", 
+                 "ISLR", "DAAG", "mice"), 
+                 dependencies = TRUE)
+```
+
+
+If you are not sure where to execute code, use the following figure to identify the console:
+
+<center>
+  <img src="console.png" alt="HTML5 Icon" width = 70%>
+</center>
+
+Just copy and paste the installation command and press the return key. When asked 
+
+```{r eval = FALSE, echo = TRUE}
+Do you want to install from sources the package which needs 
+compilation? (Yes/no/cancel)
+```
+
+type `Yes` in the console and press the return key. 
+
+## Column 2
+
+### **What if the steps to the left do not work for me?**
+If all fails and you have insufficient rights to your machine, the following web-based service will offer a solution. 
+
+1. Open a free account on [rstudio.cloud](https://rstudio.cloud). You can run your own cloud-based `RStudio` environment there. 
+2. Use Utrecht University's [MyWorkPlace](https://myworkplace.uu.nl/). You would have access to `R` and `RStudio` there. You may need to install packages for new sessions during the course. 
+
+Naturally, you will need internet access for these services to be accessed. 
+
+
+# Week 1
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture is about the elemental building blocks of `R`. We discuss what the object-oriented programming language `R` is, why we use `RStudio`, how to 'speak' `S`, the scripting language that is used in `R` and how to work with objects and elements. 
+
+You can find the [slides here](Wk1/Lecture-1_FTID.html)
+
+### Workgroup (Thursday)
+
+**Today's workgroup is online. See the Teams channel.**
+
+Make sure that you attend all workgroup meetings: However **today's meeting is vital**. We will form groups and I will tell you all about the assignments and management of expectations. 
+
+**Please do not forget to complete [Exercise 1](Wk1/Exercise/Exercise_1_walkthrough.html) before the workgroup meeting!**
+
+All the best, 
+
+Gerko
+
+### Useful Information and links
+- [The tidyverse style guide](https://style.tidyverse.org)
+- [R for Data Science](https://r4ds.had.co.nz): a wonderful book that details a usefull toolset for current and aspiring data scientists. 
+
+The above links are useful references that connect to this week's materials. 
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is threefold. We need to cover a lot of ground this week to get you started for the rest of the course.
+
+- Make [Exercise 1](Wk1/Exercise/Exercise_1_walkthrough.html) before Thursday's workgroup. This exercise will get you started with `R` and `RStudio`.
+- Make [Exercise 2](Wk1/Exercise/Exercise_2_walkthrough.html) during Thursday's workgroup timeslot. Laura will be available in the Teams channels and/or meeting to help you during that time. 
+- Complete and hand in [Exercise 3](Wk1/Exercise/Exercise_3_walkthrough.html) before the next lecture. For this week it is sufficient if you present the code to the relevant exercises.
+
+A video discussion of the exercises will be available below after the second lecture.  
+
+Hand in a markdown compiled `html` + `Rmd` file for exercise 3 to the [SurfDrive](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF) drop folder. Name the file `Yourname.Rmd`, where `Yourname` is your name. Do this ***before the next lecture on Monday***. 
+
+### Exercise discussion
+The videodiscussion for the practical exercises:
+
+- [Exercise 1 discussion](https://www.dropbox.com/s/qgxlrrl808klmjq/Exercise1_discussion.mp4?dl=0)
+- [Exercise 2 discussion](https://www.dropbox.com/s/7bxqj6gn7occ0yr/Exercise%202_discussion.mp4?dl=0)
+- [Exercise 3 discussion](https://www.dropbox.com/s/dl5jklj4oixfpxd/Exercise3_discussion.mp4?dl=0)
+
+# Week 2
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture has two parts:
+
+1. Let's explore pipes: a more efficient way of organizing our `R` code that forces you to think about the analytical process while being more memory efficient.
+2. We look at squared deviations and see how useful these calculations can be. From there we leap to least-squares estimation and start with simple linear regression.
+
+You can find the [slides here](Wk2/Lecture_2_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is about getting familiar with pipes and exploring the simple linear model.
+
+- Make [Exercise 4](Wk2/Exercise/Exercise_4_walkthrough.html) before Thursday's workgroup.
+
+Hand in a markdown compiled `html` + `Rmd` file for Exercise 4: Question 11 to the [SurfDrive](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF) drop folder. Name the file `Yourname.Rmd/html`, where `Yourname` is your name. Do this ***before the next lecture on Monday***.  
+
+### Useful References
+
+- [`magrittr`](https://magrittr.tidyverse.org)
+- [`R` for Data Science](http://r4ds.had.co.nz) - [Chapter 18 on pipes](http://r4ds.had.co.nz/pipes.html)
+
+The above links are useful references that connect to this week's materials.
+
+### Exercise answers
+The answers to the fourth practical exercises:
+
+- [Exercise 4 answers](Wk2/Exercise/Exercise_4_answers.html)
+
+# Week 3
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture is about linear modeling and its assumptions. Linear modeling is the ubiquitous work horse that is used for estimation throughout contemporary data science. However, its application has limits. We explore the application and the limits in this lecture.
+
+You can find the [slides here](Wk3/Lecture_3_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is about getting familiar with the linear model.
+
+- Make [Exercise 5](Wk3/Exercise/Exercise-5.html) before Thursday's workgroup.
+
+Hand in a markdown compiled `html` file for Exercise 5 to the [SurfDrive](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF) drop folder. Do this ***before the next lecture on Monday***.
+
+<!-- ### Solution to the exercise -->
+<!-- You can find the answers to this week's exercise in [the exercise for next week](Wk4/Exercise/Exercise_6.html). -->
+
+<!-- - The video discussion can also be found in [next week's dashboard](https://www.gerkovink.com/fundamentals/#week-4) -->
+
+### Required reading
+
+- From [Introduction to Statistical Learning](https://statlearning.com) read [Chapter 3 on Linear Regression](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6009dd9fa7bc363aa822d2c7/1611259312432/ISLR+Seventh+Printing.pdf) up to and including 3.1.1
+
+These readings are exam materials.
+
+# Week 4
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture is about statistical inference. Inference is the process of drawing conclusions about true data generating models (TDGM). The most widely know TDGM is the population, the body we aim to infer about in social science and in classical statistics.
+
+Even though statistical inference has been around for a long time, it's associated components, quantities and estimands are not always straightforward. Let's dive a bit deeper into that today, but in order to do so, we need some knowledge about statistical sampling and some widely used distributions. That is why we start today's lecture with random numbers and data generation in `R`.
+
+You can find the [slides here](Wk4/Lecture-4_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is about getting familiar with the linear model.
+
+- Make [Exercise 6](Wk4/Exercise/Exercise_6.html) before Thursday's workgroup.
+
+Hand in a markdown compiled `html` file for Exercise 6 to the [SurfDrive](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF) drop folder. Do this ***before the next lecture on Monday***.
+
+### Solution to the exercise
+You can find the answers to this week's exercise and to the previous week's exercise [here](Wk4/Exercise/Exercise_6_answers.html). Use these answers only when you are stuck. 
+
+Video discussion of the exercises in two parts:
+
+ - [Part 1](https://www.dropbox.com/s/i47g1pinm0dpt2r/Exercise45_discussion.mp4?dl=0)
+ - [Part 2](https://www.dropbox.com/s/l1actd5o6si2tx1/Exercise45_discussion_part2.mp4?dl=0)
+
+### Useful Information and links
+
+- [These lecture notes](http://www.mit.edu/~6.s085/notes/lecture3.pdf) cover the essence of the coming two weeks. 
+- From [Introduction to Statistical Learning](https://statlearning.com) read [Chapter 3 on Linear Regression](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6009dd9fa7bc363aa822d2c7/1611259312432/ISLR+Seventh+Printing.pdf) up to and including 3.4
+
+These readings are exam materials.
+
+# Week 5
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture is about being a skilled modeler. There is a famous quote that is generally attributed to [George Box](https://en.wikipedia.org/wiki/George_E._P._Box):
+
+\[\text{All models are wrong, but some are useful}\]
+
+Today we dive deeper into why and how this statement applies. We also explore techniques to infer the usefulness of a model, given that it is wrong anyway.
+
+You can find the [slides here](Wk5/Lecture_5_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is about getting more familiar with the linear model and its usefulness.
+
+- Make [Exercise 7](Wk5/Exercise/Exercise_7.html). 
+
+**No need to hand in any work; but make sure that you understand the contents, code and train ot thought of the document. If not, ask Gerko or Laura.**
+
+
+### Useful Information and links
+
+- I have prepared [a document about interpreting cross validation results](Wk5/Exercise/Example_CVlm.pdf)
+- [This online page](https://www.dummies.com/education/math/statistics/using-linear-regression-to-predict-an-outcome/) details the relation between correlation and prediction
+- [This blog post by Jonathan Barlett](https://thestatsgeek.com/2014/01/25/r-squared-and-goodness-of-fit-in-linear-regression/) gives a nice detail about $R^2$ and how it is useless on a wrongly specified model
+- [This other blog post by Jonathan](https://thestatsgeek.com/2013/10/28/r-squared-and-adjusted-r-squared/) details the usefulness of adjusted $R^2$
+
+These readings are exam materials. Also useful, but not exam material is:
+
+- Chapter XIV on regression in [this online book](http://onlinestatbook.com/2/regression/regression.html)
+
+# Week 6
+
+## Column 1
+
+### Lecture (Monday)
+Today's lecture is about logistic regression. We explore the basics of this method today and continue with a more in-depth exploration in the next weeks. 
+
+You can find the [slides here](Wk6/Lecture_6_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+## Column 2
+
+### `R` exercise
+This week's `R` exercise is about getting familiar with fitting the logistic regression model. 
+
+- Make [Exercise 8](Wk6/Exercise/Exercise_8.html). 
+
+**To allow you to enjoy the holidays, there is no need to hand in any work; but make sure that you understand the contents, code and train ot thought of the document. If not, ask Gerko or Laura.**
+
+### Useful Information and links
+
+- [Read this page on interpreting logistic regression](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-how-do-i-interpret-odds-ratios-in-logistic-regression/)
+- From [Introduction to Statistical Learning](https://statlearning.com) read [Chapter 4 on Logistic Regression](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6009dd9fa7bc363aa822d2c7/1611259312432/ISLR+Seventh+Printing.pdf) up to and including 4.3.4
+
+These readings are exam materials.
+
+# Week 7
+
+## Column 1
+
+### Lecture (Monday)
+Today we continue with logistic regression. We'll use the titanic data to demonstrate the technique and we will explore some ways to evaluate the usefulness of the fitted models. 
+
+You can find the [slides here](Wk7/Lecture_7_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+
+## Column 2
+
+### `R` exercise
+
+[The titanic.csv data](data/titanic.csv)
+
+This week's exercise is to:
+1. Recreate the plots from slides 28 and 29, but now for females
+2. For the model with the interactions:
+  
+  - Create a confusion matrix for the model with the interactions
+  - Perform crossvalidation on the `titanic` model with the interactions
+
+3. See if a model with all variables included is a better fit than the model with the interactions presented in the slides. 
+  - The model with all variables (excluding `Name`!) can be simply fit with `glm(Survived ~ . * ., data = titanic[, -3])`
+  - The `.` here implies all remaining columns in the data. `. * .` yields the full factorial model between all these columns. 
+
+Hand in a markdown compiled `html` file for Exercise 9 to the [SurfDrive](https://surfdrive.surf.nl/files/index.php/s/LqUCEt3MWVsW7DF) drop folder. Do this ***before the next lecture on Monday***.
+
+### Useful Information and links
+- [Study this page on inspecting logistic regression](https://stats.idre.ucla.edu/r/dae/logit-regression/)
+
+These readings are exam materials.
+
+# Week 8
+
+## Column 1
+
+### Lecture (Monday)
+Today we will wrap up this course. I'll give you an overview of the highlights and introduce only a few new concepts. 
+
+You can find the [slides here](Wk8/Lecture_8_FTID.html)
+
+### Workgroup (Thursday)
+**Today's workgroup is online. See the Teams channel.**
+
+## Column 2
+
+### `R` exercise
+No exercise for this week. I believe that you have been given the proper skillset to solve the assignments in this course. Use your time to improve your skills. 
+
+Do not forget to include the newly introduced concepts for this week in your Assignment 2. 
+
+# Exam material
+
+## Column 1
+
+### **Practice exam**
+You can find the [practice exam here](https://gerkovink.shinyapps.io/Practice_Exam_FTiD)
+
+### **What can be tested**
+
+[This page as a pdf](Archive/Exam_materials_pdf.pdf)
+
+The information in the lecture slides:
+
+- The lectures:
+
+  - [Lecture 1](Wk1/Lecture-1_FTID.html)
+  - [Lecture 2](Wk2/Lecture_2_FTID.html)
+  - [Lecture 3](Wk3/Lecture_3_FTID.html)
+  - [Lecture 4](Wk4/Lecture-4_FTID.html)
+  - [Lecture 5](Wk5/Lecture_5_FTID.html)
+  - [Lecture 6](Wk6/Lecture_6_FTID.html)
+  - [Lecture 7](Wk7/Lecture_7_FTID.html)
+  - [Lecture 8](Wk8/Lecture_8_FTID.html)
+
+and the information in the following sources these lecture slides are based on:
+
+- [Introduction to Statistical Learning](https://static1.squarespace.com/static/5ff2adbe3fe4fe33db902812/t/6009dd9fa7bc363aa822d2c7/1611259312432/ISLR+Seventh+Printing.pdf)
+  - Chapter 2: up to and including 2.2.2
+  - Chapter 3: up to and including 3.4
+  - Chapter 4: up to and including 4.3.4
+  - Chapter 5: up to and including 5.1
+  
+- [These lecture notes](http://www.mit.edu/~6.s085/notes/lecture3.pdf).
+- [This document](Wk5/Exercise/Example_CVlm.pdf) I prepared about interpreting cross validation results
+- [This online page](https://www.dummies.com/education/math/statistics/using-linear-regression-to-predict-an-outcome/) that details the relation between correlation and prediction
+- [This blog post by Jonathan Barlett](https://thestatsgeek.com/2014/01/25/r-squared-and-goodness-of-fit-in-linear-regression/) that details $R^2$ and explains how it is useless on a wrongly specified model
+- [This other blog post by Jonathan](https://thestatsgeek.com/2013/10/28/r-squared-and-adjusted-r-squared/) about adjusted $R^2$
+- [This page](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-how-do-i-interpret-odds-ratios-in-logistic-regression/) on interpreting logistic regression
+- [This page](https://stats.idre.ucla.edu/r/dae/logit-regression/) on inspecting logistic regression
+
+### **What about equations and formulae?**
+
+Your knowledge of matrix algebra will not be tested. So, there is no need to memorize that the regression estimates $\beta$ can be estimated as $\hat{\beta} = ({\bf X}^T{\bf X})^{-1}{\bf X}^Ty$. However, you will need to know, understand and apply equations such as: 
+
+- $y = \beta_0 + \beta_1X+\epsilon$ and any more complicated version of this. 
+- $\epsilon = y - \hat{y}$
+- $\mathbb{E}[y] = \alpha + \beta x.$
+- $\log(\text{odds}) = \log(\frac{p}{1-p}) = \log(p) - \log(1-p) = \text{logit}(p)$
+- $p_i = \frac{\text{exp}(\eta)}{1+\text{exp}(\eta)} = \frac{\text{exp}(\beta_0 + \beta_1x_{1,i} + \dots + \beta_nx_{n,i})}{1+\text{exp}(\beta_0 + \beta_1x_{1,i} + \dots + \beta_nx_{n,i})}$
+- etcetera
+
+### **What if you are in doubt?**
+
+If any of the course materials confuse you, [drop me a line](mailto:G.Vink@uu.nl?subject=Question About Exam Materials) and I'd be more than happy to explain. 
+
+**The second half of the last lecture is dedicated to a Q&A**
